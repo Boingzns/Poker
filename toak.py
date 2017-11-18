@@ -1,19 +1,7 @@
 #three of a kind
-from card import Card
+from card import Card, getCardFace
 
 testHand = [Card('4','H'), Card('4','H'), Card('2','H'), Card('4','D'), Card('3','C'), Card('J','S'), Card('10','H')]
-
-def getCardFace (num):
-    if num < 11:
-        return '%s'%num
-    elif num == 11:
-        return 'J'
-    elif num == 12:
-        return 'Q'
-    elif num == 13:
-        return 'K'
-    elif num == 14:
-        return 'A'
 
 def containsToak (hand):
     toakFound = False

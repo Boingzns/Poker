@@ -19,6 +19,8 @@ class Card:
     def printcard(self):
         print(self.suit, self.name)
 
+    
+
 def newdeck():
     deck = []
     for suit in ['Spade','Heart','Diamond','Club']:
@@ -34,3 +36,15 @@ def newdeck():
 def printdeck(deck):
     for card in deck:
         card.printcard()
+
+def getCardFace (num):
+    if num < 11:
+        return '%s'%num
+    elif num == 11:
+        return 'J'
+    elif num == 12:
+        return 'Q'
+    elif num == 13:
+        return 'K'
+    elif num == 14:
+        return 'A'
