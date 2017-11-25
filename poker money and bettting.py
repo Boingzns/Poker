@@ -56,11 +56,11 @@ for i in range(len(playersLeft)-1, -1, -1) :
             wrong = True
             while wrong :
                 possibleDucatsToBet = int(input('how many ducats do you want to bet:'))
-                if  possibleDucatsToBet < lowestPersonsMoney :
+                if  possibleDucatsToBet < lowestPersonsMoney or not possibleDucatsToBet == 0 :
                     ducatsToBet+=possibleDucatsToBet
                     wrong = False
                 else :
-                    print('that bet is too large for some players still playing, please try again')                    
+                    print('that bet is too large for some players still playing or that bet is 0 which goes against the definition of bet, please try again')                    
             betThisRound = True
             done = []
             done.append(player)
@@ -71,11 +71,11 @@ for i in range(len(playersLeft)-1, -1, -1) :
             wrong = True
             while wrong :
                 possibleDucatsToBet = int(input('how many ducats do you want to raise by, bearing in mind that the current bet is %s:' %ducatsToBet))
-                if  possibleDucatsToBet < lowestPersonsMoney :
+                if  possibleDucatsToBet < lowestPersonsMoney or not possibleDucatsToBet:
                     ducatsToBet+=possibleDucatsToBet
                     wrong = False
                 else :
-                    print('that bet is too large for some players still playing, please try again')                
+                    print('that bet is too large for some players still playing or that bet is 0 which goes against the definition of raise, please try again')                
             done = []
             done.append(player)
         if playerChoice == 'match' :
@@ -96,11 +96,11 @@ while len(done) < len(playersLeft):
                 wrong = True
                 while wrong :
                     possibleDucatsToBet = int(input('how many ducats do you want to raise by, bearing in mind that the current bet is %s:' %ducatsToBet))
-                    if  possibleDucatsToBet < lowestPersonsMoney :
+                    if  possibleDucatsToBet < lowestPersonsMoney or not possibleDucatsToBet ==0 :
                         ducatsToBet+=possibleDucatsToBet
                         wrong = False
                     else :
-                        print('that bet is too large for some players still playing, please try again')                
+                        print('that bet is too large for some players still playing  or that bet is 0 which goes against the definition of raise, please try again')                
                 done = []
                 done.append(player)
             if playerChoice == 'match' :
