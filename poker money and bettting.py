@@ -33,14 +33,16 @@ def highestPossible() :
 
 
 lowestPersonsMoney = highestPossible()                
+print('the highest possible bet is', lowestPersonsMoney)
 
 for i in range(len(playersLeft)-1, -1, -1) :
     player = playersLeft[i]
     print('player', player.number)
     if not betThisRound:
-        playerChoice = input('do you want to check, bet or fold')
+        playerChoice = input('do you want to check, bet or fold:')
     else:
-        playerChoice = input('do you want to match, raise or fold')
+        print('the current bet is', ducatsToBet)
+        playerChoice = input('do you want to match, raise or fold:')
 
     if playerChoice == 'fold' :
         playersLeft.remove(player)
@@ -53,7 +55,7 @@ for i in range(len(playersLeft)-1, -1, -1) :
         elif playerChoice == 'bet' :
             wrong = True
             while wrong :
-                possibleDucatsToBet = int(input('how many ducats do you want to bet'))
+                possibleDucatsToBet = int(input('how many ducats do you want to bet:'))
                 if  possibleDucatsToBet < lowestPersonsMoney :
                     ducatsToBet+=possibleDucatsToBet
                     wrong = False
@@ -68,7 +70,7 @@ for i in range(len(playersLeft)-1, -1, -1) :
             
             wrong = True
             while wrong :
-                possibleDucatsToBet = int(input('how many ducats do you want to raise by, bearing in mind that the current bet is %s' %ducatsToBet))
+                possibleDucatsToBet = int(input('how many ducats do you want to raise by, bearing in mind that the current bet is %s' %ducatsToBet ':'))
                 if  possibleDucatsToBet < lowestPersonsMoney :
                     ducatsToBet+=possibleDucatsToBet
                     wrong = False
@@ -84,6 +86,7 @@ while len(done) < len(playersLeft):
         player = playersLeft[i]
         if player not in done :
             print('player', player.number)
+            print('the current bet is', ducatsToBet)
             playerChoice = input('do you want to match, raise or fold')
             if playerChoice == 'fold' :
                 playersLeft.remove(player)
