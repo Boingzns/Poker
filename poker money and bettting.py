@@ -87,7 +87,7 @@ while len(done) < len(playersLeft):
         if player not in done :
             print('player', player.number)
             print('the current bet is', ducatsToBet)
-            playerChoice = input('do you want to match, raise or fold')
+            playerChoice = input('do you want to match, raise or fold:')
             if playerChoice == 'fold' :
                 playersLeft.remove(player)
                 lowestPersonsMoney = highestPossible()
