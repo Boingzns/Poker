@@ -70,7 +70,7 @@ for i in range(len(playersLeft)-1, -1, -1) :
             
             wrong = True
             while wrong :
-                possibleDucatsToBet = int(input('how many ducats do you want to raise by, bearing in mind that the current bet is %s' %ducatsToBet ':'))
+                possibleDucatsToBet = int(input('how many ducats do you want to raise by, bearing in mind that the current bet is %s:' %ducatsToBet))
                 if  possibleDucatsToBet < lowestPersonsMoney :
                     ducatsToBet+=possibleDucatsToBet
                     wrong = False
@@ -95,7 +95,7 @@ while len(done) < len(playersLeft):
             if playerChoice == 'raise' :
                 wrong = True
                 while wrong :
-                    possibleDucatsToBet = int(input('how many ducats do you want to raise by, bearing in mind that the current bet is %s' %ducatsToBet))
+                    possibleDucatsToBet = int(input('how many ducats do you want to raise by, bearing in mind that the current bet is %s:' %ducatsToBet))
                     if  possibleDucatsToBet < lowestPersonsMoney :
                         ducatsToBet+=possibleDucatsToBet
                         wrong = False
