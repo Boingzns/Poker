@@ -11,7 +11,7 @@ playerList.reverse()
 
 
 
-def highestPossible() :
+def highestPossible(playersLeft) :
     lowestPersonsMoney = playersLeft[0].money
     for player in playersLeft :
         if player.money <= lowestPersonsMoney :
@@ -20,7 +20,7 @@ def highestPossible() :
 
 
 
-def callRound() :
+def callRound(playerList) :
 
 
 
@@ -42,7 +42,7 @@ def callRound() :
 
 
 
-    lowestPersonsMoney = highestPossible()                
+    lowestPersonsMoney = highestPossible(playersLeft)                
     print('the highest possible bet is', lowestPersonsMoney)
 
     for i in range(len(playersLeft)-1, -1, -1) :
@@ -56,7 +56,7 @@ def callRound() :
 
         if playerChoice == 'fold' :
             playersLeft.remove(player)
-            lowestPersonsMoney = highestPossible()
+            lowestPersonsMoney = highestPossible(playersLeft)
             print('the highest possible bet is', lowestPersonsMoney)
         
         if not betThisRound :
@@ -78,7 +78,7 @@ def callRound() :
         else:
             if playerChoice == 'fold' :
                 playersLeft.remove(player)
-                lowestPersonsMoney = highestPossible()
+                lowestPersonsMoney = highestPossible(playersLeft)
                 print('the highest possible bet is', lowestPersonsMoney)
             if playerChoice == 'raise' :
                 
@@ -104,7 +104,7 @@ def callRound() :
                 playerChoice = input('do you want to match, raise or fold')
                 if playerChoice == 'fold' :
                     playersLeft.remove(player)
-                    lowestPersonsMoney = highestPossible()
+                    lowestPersonsMoney = highestPossible(playersLeft)
                     print('the highest possible bet is', lowestPersonsMoney)
                 if playerChoice == 'raise' :
                     wrong = True
