@@ -2,16 +2,9 @@ import card
 import random
 import player
 
-playerList = []
-
-
-for i in range(3):
-    playerList.append(player.Player())
-playerList.reverse()
-
-
-
 def highestPossible(playersLeft) :
+    if len(playersLeft) == 0:
+        return 0
     lowestPersonsMoney = playersLeft[0].money
     for player in playersLeft :
         if player.money <= lowestPersonsMoney :
@@ -19,17 +12,15 @@ def highestPossible(playersLeft) :
     return lowestPersonsMoney
 
 
-
 def callRound(playerList) :
 
-
+    playerList.reverse()
 
     #before we start the first round we mke a list of players left playing
     playersLeft = []
     for player in playerList:
         playersLeft.append(player)
     #before we start we now have a list we can show who's still playing, without affecting the complete player list
-
 
 
     #this gets called each normal round
@@ -39,15 +30,15 @@ def callRound(playerList) :
     betThisRound = False
     ducatsToBet = 0
 
-
-
-
     lowestPersonsMoney = highestPossible(playersLeft)                
     print('the highest possible bet is', lowestPersonsMoney)
 
     for i in range(len(playersLeft)-1, -1, -1) :
         player = playersLeft[i]
         print('player', player.number)
+        if len(playersLeft) <= 1:
+            print('there is only one player left, you win')
+            break
         if not betThisRound:
             playerChoice = input('do you want to check, bet or fold:')
         else:
@@ -95,7 +86,7 @@ def callRound(playerList) :
             if playerChoice == 'match' :
                 done.append(player)
                 
-    while len(done) < len(playersLeft):
+    while len(playersLeft) > 1 and len(done) < len(playersLeft):
         for i in range(len(playersLeft)-1, -1, -1) :
             player = playersLeft[i]
             if player not in done :
@@ -119,6 +110,7 @@ def callRound(playerList) :
                     done.append(player)
                 if playerChoice == 'match' :
                     done.append(player)
+    
     pot = 0
     for player in playersLeft :
         player.money -= ducatsToBet
