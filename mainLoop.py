@@ -29,8 +29,8 @@ input('blind betting')
 print('here are your cards')
 for card in player1.hand:
     card.printcard()
-
-callRound([player1, player2])
+    
+input('betting by zeb')
 
 ##Other Rounds:
 cardsToShow = 3
