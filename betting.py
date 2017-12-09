@@ -2,14 +2,12 @@ import card
 import random
 import player
 
-playerList = []
+def testBetting():
+    playerList = []
 
-
-for i in range(3):
-    playerList.append(player.Player())
-playerList.reverse()
-
-
+    for i in range(3):
+        playerList.append(player.Player())
+    playerList.reverse()
 
 def highestPossible(playersLeft) :
     lowestPersonsMoney = playersLeft[0].money
