@@ -22,7 +22,7 @@ def callRound(playerList) :
 
 
 
-    #Before we start the first round we mke a list of players left playing.
+    #Before we start the first round we make a list of players left playing.
     playersLeft = []
     for player in playerList:
         playersLeft.append(player)
