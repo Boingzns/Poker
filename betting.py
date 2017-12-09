@@ -22,15 +22,15 @@ def callRound(playerList) :
 
 
 
-    #before we start the first round we mke a list of players left playing
+    #Before we start the first round we mke a list of players left playing.
     playersLeft = []
     for player in playerList:
         playersLeft.append(player)
-    #before we start we now have a list we can show who's still playing, without affecting the complete player list
+    #Before we start we now have a list we can show who's still playing, without affecting the complete player list.
 
 
 
-    #this gets called each normal round
+    #This gets called each normal round.
     wrong = False
     againPlayers = []
     done = []
