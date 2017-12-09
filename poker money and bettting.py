@@ -53,7 +53,6 @@ def callRound() :
         else:
             print('the current bet is', ducatsToBet)
             playerChoice = input('do you want to match, raise or fold:')
-<<<<<<< HEAD
 
         if playerChoice == 'fold' :
             playersLeft.remove(player)
@@ -77,12 +76,10 @@ def callRound() :
                 done.append(player)
 
         else:
-=======
             if playerChoice == 'fold' :
                 playersLeft.remove(player)
                 lowestPersonsMoney = highestPossible()
                 print('the highest possible bet is', lowestPersonsMoney)
->>>>>>> 27bfaabf8c133df7eebc4c5902ef89ee7e12b1f3
             if playerChoice == 'raise' :
                 
                 wrong = True
