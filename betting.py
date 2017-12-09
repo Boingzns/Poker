@@ -22,7 +22,7 @@ def callRound(playerList) :
 
 
 
-    #Before we start the first round we mke a list of players left playing.
+    #Before we start the first round we make a list of players left playing.
     playersLeft = []
     for player in playerList:
         playersLeft.append(player)
@@ -46,6 +46,7 @@ def callRound(playerList) :
     for i in range(len(playersLeft)-1, -1, -1) :
         player = playersLeft[i]
         print('Player', player.number)
+        #If no one has made a bet this round, then, it asks for an input. 
         if not betThisRound:
             playerChoice = input('Do you want to check, bet or fold?:')
         else:
