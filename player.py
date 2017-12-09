@@ -8,7 +8,7 @@ class Player:
         self.hand = []
         self.playing = True
 
-    def receivecard(self, newcard):
+    def receiveCard(self, newcard):
         self.hand.append(newcard)
  
 
