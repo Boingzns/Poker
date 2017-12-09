@@ -29,8 +29,6 @@ input('blind betting')
 print('here are your cards')
 for card in player1.hand:
     card.printcard()
-    
-input('betting by zeb')
 
 callRound([player1, player2])
 
