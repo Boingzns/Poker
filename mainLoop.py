@@ -32,6 +32,8 @@ for card in player1.hand:
     
 input('betting by zeb')
 
+callRound([player1, player2])
+
 ##Other Rounds:
 cardsToShow = 3
 for i in range(4):
