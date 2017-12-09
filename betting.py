@@ -2,6 +2,14 @@ import card
 import random
 import player
 
+def testBetting():
+    playerList = []
+
+    for i in range(3):
+        playerList.append(player.Player())
+    playerList.reverse()
+
+
 def highestPossible(playersLeft) :
     if len(playersLeft) == 0:
         return 0
@@ -16,12 +24,11 @@ def callRound(playerList) :
 
     playerList.reverse()
 
-    #before we start the first round we mke a list of players left playing
+    #Before we start the first round we mke a list of players left playing.
     playersLeft = []
     for player in playerList:
         playersLeft.append(player)
-    #before we start we now have a list we can show who's still playing, without affecting the complete player list
-
+    #Before we start we now have a list we can show who's still playing, without affecting the complete player list.
 
     #this gets called each normal round
     wrong = False
